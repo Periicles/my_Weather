@@ -36,7 +36,7 @@
     },
     methods: {
         async searchCity() {
-            const apiKey = 'b9d8bc0df3873c91f23a567fcac64403';
+            const apiKey = process.env.VUE_APP_WEATHER_API_KEY; // Ensure you have set this in your .env file
             const url = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${encodeURIComponent(this.cityName)}`;
             try {
                 const response = await fetch(url);
